@@ -17,13 +17,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '8.0.x'  # sau 7.0.x daca ai alta versiune instalata
+        dotnet-version: '8.0.x'  
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore TaskManagerApp.sln
 
     - name: Build solution
-      run: dotnet build --no-restore
+      run: dotnet build TaskManagerApp.sln --no-restore
 
     - name: Run unit tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test TaskManagerApp.sln --no-build --verbosity normal
